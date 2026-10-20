@@ -29,10 +29,23 @@ class AuthService extends ChangeNotifier {
   User? _user;
   StreamSubscription<AuthState>? _sub;
 
+  /// Error init terakhir (null = belum pernah gagal). Tidak pernah throw:
+  /// gagal init = kembali null agar runApp tetap jalan.
+  static String? lastError;
+
   static Future<AuthService?> init() async {
     if (!BackendConfig.configured) return null;
-    await Supabase.initialize(url: BackendConfig.url, publishableKey: BackendConfig.anonKey);
-    return AuthService._(Supabase.instance.client);
+    lastError = null;
+    try {
+      await Supabase.initialize(
+        url: BackendConfig.url,
+        publishableKey: BackendConfig.anonKey,
+      ).timeout(const Duration(seconds: 15));
+      return AuthService._(Supabase.instance.client);
+    } catch (e) {
+      lastError = e.toString().replaceFirst('Exception: ', '');
+      return null;
+    }
   }
 
   SupabaseClient get client => _client;

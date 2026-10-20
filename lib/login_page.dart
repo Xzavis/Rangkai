@@ -6,18 +6,92 @@ import 'auth.dart';
 import 'widgets.dart';
 
 // ---------- Gerbang: config -> login -> aplikasi ----------
+// initFailed = backend dikonfigurasi tapi init gagal (offline/URL salah).
+// Bedakan dari config kosong agar pesannya jujur + ada tombol aksi.
 class AuthGate extends StatelessWidget {
-  const AuthGate({super.key, required this.auth, required this.child});
+  const AuthGate({
+    super.key,
+    required this.auth,
+    required this.child,
+    this.initFailed = false,
+    this.offline = false,
+    this.busy = false,
+    this.onRetry,
+    this.onOffline,
+  });
   final AuthService? auth;
   final Widget child;
+  final bool initFailed, offline, busy;
+  final VoidCallback? onRetry, onOffline;
 
   @override
   Widget build(BuildContext context) {
-    if (auth == null) return const ConfigMissingPage();
+    if (offline) return child;
+    if (auth == null) {
+      return initFailed
+          ? BackendGagalPage(busy: busy, onRetry: onRetry, onOffline: onOffline)
+          : const ConfigMissingPage();
+    }
     return AnimatedBuilder(
       animation: auth!,
       builder: (context, _) =>
           auth!.signedIn ? child : LoginPage(auth: auth!),
+    );
+  }
+}
+
+/// Ditampilkan saat init Supabase gagal (HP offline, URL/key salah).
+/// Selalu ada jalan keluar: coba lagi atau lanjut offline.
+class BackendGagalPage extends StatelessWidget {
+  const BackendGagalPage({super.key, this.busy = false, this.onRetry, this.onOffline});
+  final bool busy;
+  final VoidCallback? onRetry, onOffline;
+  @override
+  Widget build(BuildContext context) {
+    final tt = Theme.of(context).textTheme;
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 440),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const CPIcon('wallet', size: 48),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Tidak tersambung ke server',
+                    style: tt.headlineSmall
+                        ?.copyWith(fontWeight: FontWeight.w800),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    AuthService.lastError == null
+                        ? 'Cek internet kamu lalu coba lagi.'
+                        : 'Cek internet kamu lalu coba lagi.\nDetail: ${AuthService.lastError}',
+                    style: tt.bodySmall,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 20),
+                  CpiButton(
+                    onPressed: busy ? null : onRetry,
+                    child: Text(busy ? 'Menyambung...' : 'Coba lagi'),
+                  ),
+                  const SizedBox(height: 8),
+                  CpiButton(
+                    secondary: true,
+                    onPressed: busy ? null : onOffline,
+                    child: const Text('Lanjut offline (data lokal)'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

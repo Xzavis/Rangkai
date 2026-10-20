@@ -26,30 +26,59 @@ class CpiApp extends StatefulWidget {
 
 class _CpiAppState extends State<CpiApp> {
   var _mode = ThemeMode.system;
+  AuthService? _auth;
+  var _offline = false;
+  var _busy = false;
+
   @override
-  Widget build(BuildContext context) => MaterialApp(
-    title: 'Rangkai',
-    debugShowCheckedModeBanner: false,
-    theme: cpiMaterialTheme(Brightness.light),
-    darkTheme: cpiMaterialTheme(Brightness.dark),
-    themeMode: _mode,
-    builder: (context, child) => FTheme(
-      data: Theme.of(context).brightness == Brightness.dark
-          ? ui.darkTheme
-          : ui.lightTheme,
-      child: child!,
-    ),
-    home: AuthGate(
-      auth: widget.auth,
-      // State baru per user: cloud workspace lama tidak bocor ke akun lain.
-      child: Shell(
-        key: ValueKey(widget.auth?.email ?? 'offline'),
-        mode: _mode,
-        onMode: (mode) => setState(() => _mode = mode),
-        auth: widget.auth,
+  void initState() {
+    super.initState();
+    _auth = widget.auth;
+  }
+
+  Future<void> _retry() async {
+    setState(() => _busy = true);
+    final auth = await AuthService.init();
+    if (!mounted) return;
+    setState(() {
+      _auth = auth;
+      _busy = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final failed = BackendConfig.configured && _auth == null && !_offline;
+    final email = _offline ? 'offline' : _auth?.email ?? 'anon';
+    return MaterialApp(
+      title: 'Rangkai',
+      debugShowCheckedModeBanner: false,
+      theme: cpiMaterialTheme(Brightness.light),
+      darkTheme: cpiMaterialTheme(Brightness.dark),
+      themeMode: _mode,
+      builder: (context, child) => FTheme(
+        data: Theme.of(context).brightness == Brightness.dark
+            ? ui.darkTheme
+            : ui.lightTheme,
+        child: child!,
       ),
-    ),
-  );
+      home: AuthGate(
+        auth: _auth,
+        initFailed: failed,
+        offline: _offline,
+        busy: _busy,
+        onRetry: _retry,
+        onOffline: () => setState(() => _offline = true),
+        // State baru per user: cloud workspace lama tidak bocor ke akun lain.
+        child: Shell(
+          key: ValueKey(email),
+          mode: _mode,
+          onMode: (mode) => setState(() => _mode = mode),
+          auth: _offline ? null : _auth,
+        ),
+      ),
+    );
+  }
 }
 
 class Shell extends StatefulWidget {
