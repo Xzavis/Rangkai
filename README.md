@@ -1,4 +1,4 @@
-# CPI (Cash, Plan & Itinerary)
+# Rangkai — Semua terangkai.
 
 App Flutter Android: keuangan, rencana dan rundown manual, budget vs realisasi, GPS realtime wajib, pencarian hotel dan stasiun asli dari peta. Versi 3.0.0 menggunakan Forui, tema biru light/dark, dan ikon custom SVG.
 

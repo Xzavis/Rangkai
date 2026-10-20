@@ -1,0 +1,39 @@
+name: cpi
+description: "CPI — Cash, Plan & Itinerary. Finance, rundown acara, budget vs realisasi, harga travel live."
+publish_to: "none"
+version: 4.0.0+1
+
+environment:
+  sdk: ^3.13.0
+  flutter: '>=3.47.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  forui: ^0.27.6
+  geolocator: ^13.0.2 # GPS realtime wajib: izin, status layanan, stream posisi, jarak ke tujuan.
+  image_picker: ^1.2.4
+  supabase_flutter: ^2.18.3
+  table_calendar: ^3.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  forui_cli: ^0.27.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/theme.css
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter.ttf
+    - family: JetBrains Mono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono.ttf
+    - family: Source Serif 4
+      fonts:
+        - asset: assets/fonts/SourceSerif4.ttf
