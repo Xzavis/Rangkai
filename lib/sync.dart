@@ -89,17 +89,20 @@ class CloudSync {
           .from('plans')
           .select()
           .eq('workspace_id', workspaceId)
-          .order('created_at', ascending: false);
+          .order('created_at', ascending: false)
+          .timeout(const Duration(seconds: 15));
       final rds = await _client
           .from('rundowns')
           .select()
           .order('day')
-          .order('time');
+          .order('time')
+          .timeout(const Duration(seconds: 15));
       final txs = await _client
           .from('transactions')
           .select()
           .eq('workspace_id', workspaceId)
-          .order('created_at', ascending: false);
+          .order('created_at', ascending: false)
+          .timeout(const Duration(seconds: 15));
       final byPlan = <String, List<Rundown>>{};
       for (final r in rds as List) {
         final m = (r as Map).cast<String, dynamic>();

@@ -96,23 +96,36 @@ class WorkspaceService extends ChangeNotifier {
     _error = null;
     notifyListeners();
     try {
+      final user = _client.auth.currentUser;
+      if (user == null) {
+        _loading = false;
+        notifyListeners();
+        return;
+      }
       final rows = await _client
           .from('memberships')
           .select('role, workspaces(id, name, type)')
-          .eq('user_id', _client.auth.currentUser!.id);
+          .eq('user_id', user.id)
+          .timeout(const Duration(seconds: 15));
       _spaces = [];
       _roles = {};
       for (final r in rows as List) {
-        final w = Workspace.from((r['workspaces'] as Map).cast<String, dynamic>());
+        final rawWs = r['workspaces'];
+        if (rawWs == null) continue;
+        final w = Workspace.from((rawWs as Map).cast<String, dynamic>());
         _spaces.add(w);
         _roles[w.id] = roleOf(r['role'] as String);
       }
-      _activeId ??= _spaces.isEmpty ? null : _spaces.first.id;
-      if (_activeId != null && !_roles.containsKey(_activeId)) {
-        _activeId = _spaces.isEmpty ? null : _spaces.first.id;
+      if (_spaces.isEmpty) {
+        await create('Pribadi');
+        return;
+      }
+      _activeId ??= _spaces.first.id;
+      if (!_roles.containsKey(_activeId)) {
+        _activeId = _spaces.first.id;
       }
     } catch (e) {
-      _error = 'Gagal memuat workspace: $e';
+      _error = 'Gagal memuat workspace. Cek koneksi internet.';
     }
     _loading = false;
     notifyListeners();
