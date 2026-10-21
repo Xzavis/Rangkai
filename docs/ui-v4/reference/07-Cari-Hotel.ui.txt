@@ -1,0 +1,61 @@
+RANGKAI — Cari Hotel
+09:41
+network_cell
+wifi
+battery_full
+arrow_back
+Rencana Perjalanan
+chevron_right
+Bandung
+Cari Hotel
+Estimasi penginapan sekitar destinasi
+train
+Kereta
+hotel
+Hotel
+location_on
+Bandung, Jawa Barat
+edit
+calendar_month
+24–25 Okt 2026
+1 malam
+Hotel Savoy Homann
+domain
+place
+Jl. Asia Afrika No.112, Bandung
+(~2,4 km dari stasiun)
+Estimasi
+Rp350.000
+/ malam
+add
+Tambahkan ke rencana
+Grand Hotel Preanger
+place
+Jl. Asia Afrika No.81, Bandung (~2,8 km)
+apartment
+Estimasi
+Rp380.000
+/ malam
+add
+Tambahkan
+Hotel di sekitar Braga
+place
+Kawasan Braga, Bandung (~2,0 km)
+location_city
+Estimasi
+Rp280.000
+/ malam
+add
+Tambahkan
+info
+Nama hotel dari OpenStreetMap. Harga adalah estimasi aplikasi.
+home
+Beranda
+account_balance_wallet
+Keuangan
+explore
+Rencana
+calendar_today
+Kalender
+folder_shared
+Workspace

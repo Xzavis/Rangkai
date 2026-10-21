@@ -1,0 +1,38 @@
+Tambah Transaksi — RANGKAI
+09:41
+wifi
+network_cell
+battery_full
+close
+Tambah Transaksi
+arrow_outward
+Pengeluaran
+south_west
+Pemasukan
+Jumlah (Rp)
+Rp
+Nama transaksi
+Tanggal
+calendar_today
+24 Oktober 2026, 12:45 WIB
+expand_more
+Kategori
+restaurant
+Makan
+directions_car
+Transport
+hotel
+Hotel
+shopping_bag
+Belanja
+confirmation_number
+Hiburan
+more_horiz
+Lainnya
+Rencana (opsional)
+Trip Bandung (24–25 Okt)
+Tanpa rencana
+unfold_more
+Tambah catatan
+Simpan transaksi
+Batal

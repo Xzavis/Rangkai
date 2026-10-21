@@ -1,0 +1,50 @@
+Rangkai — Absen Tim
+09:41
+signal_cellular_4_bar
+wifi
+battery_full
+arrow_back
+Absen Tim
+Komunitas Rangkai
+Sesi Braga
+assignment_ind
+Bima
+verified
+Perwakilan aktif
+Mewakili presensi untuk Komunitas Rangkai
+location_on
+Titik kumpul Braga
+Di dalam radius 150 m
+satellite_alt
+GPS aktif
+near_me
+Jarak saat ini:
+42 m
+dari titik pusat
+Foto grup
+Wajib
+photo_camera
+Foto grup siap
+4 orang terlihat dalam frame
+refresh
+Foto ulang
+Pastikan keempat anggota terlihat dalam foto.
+Jumlah orang dalam foto
+Isi sesuai foto.
+Konfirmasi manual
+remove
+4
+add
+info
+Total anggota aktif komunitas: 4 orang
+Kriteria validasi
+check_circle
+Foto grup siap (1 file terlampir)
+check_circle
+4 orang dalam foto (sesuai anggota aktif)
+check_circle
+Lokasi tercatat (di dalam radius Braga)
+Kirim absen
+send
+info
+Foto, jumlah anggota, dan GPS dikirim bersama.

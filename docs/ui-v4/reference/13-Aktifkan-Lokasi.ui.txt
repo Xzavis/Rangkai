@@ -1,0 +1,27 @@
+Rangkai — Aktifkan Lokasi
+09:41
+network_cell
+wifi
+battery_full
+arrow_back
+Akses lokasi
+location_on
+Aktifkan lokasi
+Lokasi digunakan untuk tracking perjalanan dan bukti absensi tim.
+security
+Izinkan akses lokasi
+Akses GPS saat aplikasi aktif
+Belum diizinkan
+my_location
+Nyalakan GPS
+Diperlukan saat tracking aktif
+Menunggu izin
+explore
+Baca posisi perangkat
+Deteksi radius titik kumpul
+Belum tersedia
+navigation
+Izinkan lokasi
+settings
+Buka pengaturan lokasi
+Izin ditolak permanen? Buka pengaturan aplikasi.

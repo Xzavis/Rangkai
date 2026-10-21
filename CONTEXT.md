@@ -1,7 +1,22 @@
-# CPI — Shared Session Context (container: `cpi`)
+# Rangkai — Shared Session Context (container: `cpi`)
 
 > File ini adalah sumber kebenaran lintas-agent (Antigravity CLI/IDE, Claude Code, Cursor).
 > Supermemory `containerTag` wajib = `cpi`. Daemon lokal: `sm start` / `sm status` (port 6767).
+
+## Handoff UI terbaru untuk Muse (2026-10-21)
+
+Pengguna meminta UI baru hasil Stitch/Impeccable dimasukkan ke repo agar Muse Agent Code dapat mengimplementasikannya. Mulai dari `MUSE_HANDOFF.md` dan `AGENTS.md`, lalu `docs/ui-v4/README.md`. Handoff ini menambah referensi/spesifikasi, bukan implementasi Dart atau build APK baru.
+
+- Acuan visual terbaru: 16 PNG/HTML terpilih di `docs/ui-v4/reference/`; `DESIGN.md` dan `tokens.json` menggantikan aturan visual v3/radius6/empat tab yang tertulis pada riwayat di bawah.
+- Target: Beranda, Keuangan, Rencana, Kalender, Workspace; travel dari Rencana; radius card16, field/button12, padding20; Inter untuk UI/uang dan sapaan Source Serif4. Rangkai adalah nama UI target; jangan kembali memilih nama alternatif dari studi lama.
+- Logo rantai pada header tidak mengganti launcher folded yang sudah ada atau package ID. Source `pubspec.yaml` dasar adalah 4.0.0+1; keterangan versi3 di riwayat tidak mutakhir.
+- `SCREENS.md` memetakan semua layar ke simbol Dart; `GAPS.md` membedakan existing feature dari pekerjaan baru, terutama kategori/note, endDate, add-to-plan, radius checkpoint absen dan offline callback.
+- Pertahankan kontrak bisnis pada bagian bawah: GPS gate, tiga pemicu selesai, detach transaksi, cloud write error, izin perwakilan dan headcount manual. Radius150m penyelesaian plan sudah ada; radius checkpoint absensi pada mockup belum ada di model/service baseline.
+- Store.reset lokal menghapus dan seed; Store.reset cloud memuat ulang data server. Copy UI harus membedakan keduanya. Tidak ada reset server baru yang diotorisasi oleh screenshot.
+- Workspace invite code asli dari service berformat6 karakter; RANGKAI24/nama anggota/status foto pada PNG adalah contoh. Fixture hanya untuk tes/review, jangan diunggah sebagai data pengguna.
+- Repo baseline tidak memuat semua aset runtime/platform yang dirujuk dokumen. Lihat GAPS.md sebelum menyatakan analyzer/test/build lulus. `browser-qa.json` membuktikan HTML, bukan Flutter.
+
+Semua bagian studi desain/branding lama di bawah adalah riwayat. Untuk keputusan visual yang bertentangan gunakan handoff ini dan DESIGN.md; kontrak layanan tetap berlaku. Isi lama tentang R2 juga historis: `lib/attendance.dart` saat audit memakai PhotoStore dengan Supabase Storage.
 
 ## Apa itu CPI
 App Flutter Android: Cash, Plan & Itinerary — keuangan, rencana + rundown manual,

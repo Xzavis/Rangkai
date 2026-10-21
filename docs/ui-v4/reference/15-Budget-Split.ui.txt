@@ -1,0 +1,43 @@
+Budget & Split — RANGKAI
+09:41
+signal_cellular_4_bar
+wifi
+battery_full
+arrow_back
+Budget & Split
+Trip Bandung (24–25 Okt 2026)
+Anggaran Trip Bandung
+Terpakai 50%
+Total Anggaran
+Rp1.500.000
+Terpakai
+Rp750.000
+Sisa
+Rp750.000
+calculate
+Bagi Biaya
+Total biaya
+Rp
+Terpakai
+Jumlah orang
+Beban dibagi rata
+−
+4
++
+Pembagian sama rata
+pie_chart
+Rp187.500
+/ orang
+Rp750.000 ÷ 4 orang = Rp187.500 / orang
+content_copy
+Salin hasil
+home
+Beranda
+account_balance_wallet
+Keuangan
+explore
+Rencana
+calendar_today
+Kalender
+folder_shared
+Workspace
