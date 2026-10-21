@@ -1,0 +1,61 @@
+RANGKAI — Cari Kereta
+09:41
+signal_cellular_4_bar
+wifi
+battery_full
+arrow_back
+Cari Kereta
+sync
+train
+Kereta
+hotel
+Hotel
+GPS aktif • Stasiun terdekat: Gambir
+near_me
+~1.4 km
+trip_origin
+Stasiun Asal
+Stasiun Gambir (GMR, Jakarta)
+swap_vert
+location_on
+Stasiun Tujuan
+Stasiun Bandung (BD, Bandung)
+calendar_today
+24 Okt 2026
+•
+1 Penumpang
+Ubah pencarian rute
+Rute Terpilih
+Gambir → Bandung
+Kategori Antarkota
+directions_transit
+Estimasi biaya
+Rp250.000
+/ orang
+add
+Tambahkan ke rencana
+Alternatif Rute Lainnya
+Pasar Senen → Kiaracondong
+Estimasi:
+Rp150.000
+/ orang
+add
+Tambahkan
+Halim → Padalarang
+Estimasi:
+Rp350.000
+/ orang
+add
+Tambahkan
+info
+Nama stasiun dari OpenStreetMap. Biaya adalah estimasi aplikasi, bukan tarif resmi.
+home
+Beranda
+account_balance_wallet
+Keuangan
+explore
+Rencana
+calendar_today
+Kalender
+folder_shared
+Workspace

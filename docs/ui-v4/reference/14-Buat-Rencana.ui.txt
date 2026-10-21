@@ -1,0 +1,37 @@
+Rangkai - Buat Rencana
+09:41
+signal_cellular_4_bar
+wifi
+battery_full
+close
+Buat rencana
+Nama rencana
+edit_note
+Anggaran (Rp)
+Tanggal
+calendar_today
+near_me
+Tempat tujuan
+check
+Tersimpan
+hotel
+Hotel Savoy Homann, Bandung
+Jl. Asia Afrika No.112, Lengkong
+pin_drop
+Koordinat tujuan tersimpan:
+-6.9218, 107.6109
+Pilih tempat dari hasil pencarian agar tracking GPS dapat digunakan.
+view_timeline
+Susunan Kegiatan Awal
+add
+Tambah kegiatan
+08.00 WIB • Stasiun Gambir
+Est. Rp250.000
+Berangkat dari Stasiun Gambir
+Kereta Argo Parahyangan menuju Stasiun Bandung
+sync
+Info Radius:
+Rencana selesai dan dihapus dalam radius 150 m. Transaksi tetap tersimpan.
+check
+Simpan rencana
+Batal

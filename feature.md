@@ -1,4 +1,6 @@
-# Fitur CPI (Cash, Plan & Itinerary) — Versi 3.0.0
+# Fitur CPI/Rangkai — catatan baseline v3
+
+> Catatan historis: bagian visual di dokumen ini berasal dari UI v3. Arah implementasi terbaru adalah [MUSE_HANDOFF.md](MUSE_HANDOFF.md), [DESIGN.md](DESIGN.md) dan [docs/ui-v4](docs/ui-v4/README.md). Handoff v4 tidak menyatakan semua fitur tambahan mockup telah ada di source; lihat GAPS.md untuk audit kemampuan sebenarnya. Versi package dasar sekarang 4.0.0+1.
 
 Dokumen ini menjabarkan seluruh fitur, arsitektur antarmuka, dan kapabilitas sistem pada **CPI Versi 3.0.0** (`v3.0.0+4`).
 

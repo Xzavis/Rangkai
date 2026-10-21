@@ -1,0 +1,79 @@
+Rangkai - Keuangan
+09:41
+wifi
+signal_cellular_4_bar
+battery_full
+Keuangan
+calendar_today
+Oktober 2026
+expand_more
+content_copy
+Saldo saat ini
+visibility
+Rp4.250.000
+arrow_downward
+Pemasukan
++Rp6.000.000
+arrow_upward
+Pengeluaran
+-Rp1.750.000
+add
+Tambah transaksi
+calculate
+Budget & Split
+tune
+Salin Ringkasan
+search
+Semua
+Pemasukan
+Pengeluaran
+Hari ini — 24 Okt 2026
+-Rp445.000
+restaurant
+Makan siang
+12:45
+•
+Trip Bandung
+-Rp150.000
+train
+Tiket Kereta Argo Parahyangan
+07:30
+•
+Trip Bandung
+-Rp250.000
+local_cafe
+Kopi Tiam Stasiun
+07:15
+•
+Tanpa rencana
+-Rp45.000
+Kemarin — 23 Okt 2026
++Rp5.095.000
+account_balance_wallet
+Gaji Proyek Desain UI
+16:00
+•
+Tanpa rencana
++Rp6.000.000
+shopping_bag
+Belanja Mingguan Supermarket
+10:20
+•
+Tanpa rencana
+-Rp580.000
+bolt
+Tagihan Listrik PLN
+09:00
+•
+Tanpa rencana
+-Rp325.000
+home
+Beranda
+account_balance_wallet
+Keuangan
+explore
+Rencana
+calendar_today
+Kalender
+folder_shared
+Workspace

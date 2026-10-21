@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "purpose": "tests-and-design-review-only-not-production-seed",
+  "currency": "IDR",
+  "clock": "2026-10-24T13:00:00+07:00",
+  "user": {
+    "name": "Rian",
+    "email": "rian@example.com"
+  },
+  "workspace": {
+    "id": "demo-community",
+    "name": "Komunitas Rangkai",
+    "inviteCodeIllustration": "RANGKAI24",
+    "members": [
+      {
+        "id": "rian",
+        "name": "Rian",
+        "role": "owner"
+      },
+      {
+        "id": "nadia",
+        "name": "Nadia",
+        "role": "admin"
+      },
+      {
+        "id": "bima",
+        "name": "Bima",
+        "role": "member"
+      },
+      {
+        "id": "sari",
+        "name": "Sari",
+        "role": "member"
+      }
+    ]
+  },
+  "plans": [
+    {
+      "id": "trip-bandung",
+      "title": "Trip Bandung",
+      "place": "Hotel Savoy Homann, Bandung",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-25",
+      "budget": 1500000,
+      "lat": -6.9218,
+      "lng": 107.6109,
+      "rundown": [
+        {
+          "id": "r1",
+          "day": "2026-10-24",
+          "time": "08:00",
+          "title": "Berangkat dari Stasiun Gambir",
+          "cost": 250000,
+          "done": true
+        },
+        {
+          "id": "r2",
+          "day": "2026-10-24",
+          "time": "12:00",
+          "title": "Makan siang kuliner lokal",
+          "cost": 150000,
+          "done": true
+        },
+        {
+          "id": "r3",
+          "day": "2026-10-24",
+          "time": "14:00",
+          "title": "Check-in Hotel Savoy Homann",
+          "cost": 350000,
+          "done": false
+        },
+        {
+          "id": "r4",
+          "day": "2026-10-24",
+          "time": "16:00",
+          "title": "Jalan santai & foto di Jl. Braga",
+          "cost": 0,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "community-event",
+      "title": "Acara Komunitas Desain",
+      "place": "Co-working Hub Jakarta",
+      "startDate": "2026-10-31",
+      "endDate": "2026-10-31",
+      "budget": 2000000,
+      "rundown": []
+    }
+  ],
+  "transactions": [
+    {
+      "id": "meal",
+      "title": "Makan siang di Braga",
+      "amount": -150000,
+      "date": "2026-10-24T12:45:00+07:00",
+      "category": "food",
+      "note": null,
+      "planId": "trip-bandung"
+    },
+    {
+      "id": "train",
+      "title": "Tiket Kereta Argo Parahyangan",
+      "amount": -250000,
+      "date": "2026-10-24T07:30:00+07:00",
+      "category": "transport",
+      "note": null,
+      "planId": "trip-bandung"
+    },
+    {
+      "id": "hotel",
+      "title": "Uang muka hotel",
+      "amount": -350000,
+      "date": "2026-10-22T14:10:00+07:00",
+      "category": "hotel",
+      "note": null,
+      "planId": "trip-bandung"
+    },
+    {
+      "id": "coffee",
+      "title": "Kopi Tiam Stasiun",
+      "amount": -45000,
+      "date": "2026-10-24T07:15:00+07:00",
+      "category": "food",
+      "note": null,
+      "planId": null
+    },
+    {
+      "id": "salary",
+      "title": "Gaji Proyek Desain UI",
+      "amount": 6000000,
+      "date": "2026-10-23T16:00:00+07:00",
+      "category": "income",
+      "note": null,
+      "planId": null
+    },
+    {
+      "id": "shopping",
+      "title": "Belanja Mingguan Supermarket",
+      "amount": -580000,
+      "date": "2026-10-23T10:20:00+07:00",
+      "category": "shopping",
+      "note": null,
+      "planId": null
+    },
+    {
+      "id": "electricity",
+      "title": "Tagihan Listrik PLN",
+      "amount": -325000,
+      "date": "2026-10-23T09:00:00+07:00",
+      "category": "other",
+      "note": null,
+      "planId": null
+    },
+    {
+      "id": "data",
+      "title": "Paket data",
+      "amount": -50000,
+      "date": "2026-10-21T08:00:00+07:00",
+      "category": "other",
+      "note": null,
+      "planId": null
+    }
+  ],
+  "attendance": {
+    "planId": "trip-bandung",
+    "checkpointIllustration": "Braga",
+    "representativeId": "bima",
+    "memberCount": 4,
+    "headcountMode": "manual",
+    "photo": null,
+    "radiusMetersTarget": 150,
+    "geofenceStatusInSource": "not-implemented"
+  },
+  "split": {
+    "total": 750000,
+    "people": 4,
+    "perPerson": 187500,
+    "remainder": 0
+  },
+  "expected": {
+    "income": 6000000,
+    "expense": 1750000,
+    "balance": 4250000,
+    "tripSpent": 750000,
+    "tripRemaining": 750000,
+    "communityEventSpent": 0,
+    "communityEventRemaining": 2000000
+  },
+  "visualExceptions": [
+    "Home screenshot uses a curated transaction subset; runtime sorts the complete ledger by date.",
+    "Upcoming community card remaining 1700000 in screenshot is illustrative; this fixture derives 2000000 because no expenses link to that plan.",
+    "Status bar time, RANGKAI24 invite code and GPS/photo badges are illustrative, not service state."
+  ]
+}

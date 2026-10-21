@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "name": "Rangkai UI v4 — Muse handoff",
+  "created": "2026-10-21",
+  "sourceRepository": "Xzavis/Rangkai",
+  "sourceCommit": "a1598a0bd40abb4d00a372cf5edcb516fe4b41c1",
+  "status": "design-ready-flutter-implementation-pending",
+  "visualAuthority": "local-refined-HTML-and-PNG",
+  "stitchProject": "https://stitch.withgoogle.com/projects/12569152226259471213",
+  "stitchCanvasMayContainDuplicates": true,
+  "screens": [
+    {
+      "id": "01",
+      "title": "Beranda",
+      "route": "home",
+      "section": "Beranda",
+      "implementationStatus": "pending",
+      "scope": "existing",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "HomePage"
+        }
+      ],
+      "html": "reference/01-Beranda.html",
+      "png": "reference/01-Beranda.png",
+      "text": "reference/01-Beranda.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2622,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/3b802b3a22ff409f92c80347d808a95e"
+    },
+    {
+      "id": "02",
+      "title": "Keuangan",
+      "route": "finance",
+      "section": "Keuangan",
+      "implementationStatus": "pending",
+      "scope": "existing",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "FinancePage"
+        }
+      ],
+      "html": "reference/02-Keuangan.html",
+      "png": "reference/02-Keuangan.png",
+      "text": "reference/02-Keuangan.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2330,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/3f78f30db49a40a882c1a6dd70773bbb"
+    },
+    {
+      "id": "03",
+      "title": "Rencana",
+      "route": "plans",
+      "section": "Rencana",
+      "implementationStatus": "pending",
+      "scope": "existing",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "PlansPage"
+        }
+      ],
+      "html": "reference/03-Rencana.html",
+      "png": "reference/03-Rencana.png",
+      "text": "reference/03-Rencana.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2692,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/88fb762c012b4f5bb7653d82e423268b"
+    },
+    {
+      "id": "04",
+      "title": "Detail rencana",
+      "route": "plan-detail",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "existing",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "PlanDetailPage"
+        }
+      ],
+      "html": "reference/04-Detail-Rencana.html",
+      "png": "reference/04-Detail-Rencana.png",
+      "text": "reference/04-Detail-Rencana.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 3534,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/9842865372724f499c5203e303d96d2f"
+    },
+    {
+      "id": "05",
+      "title": "Tambah transaksi",
+      "route": "transaction-create",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "showTxSheet"
+        }
+      ],
+      "html": "reference/05-Tambah-Transaksi.html",
+      "png": "reference/05-Tambah-Transaksi.png",
+      "text": "reference/05-Tambah-Transaksi.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2080,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/08aa4d55efde44edaaf74909226e4e14"
+    },
+    {
+      "id": "06",
+      "title": "Cari kereta",
+      "route": "travel-train",
+      "section": "Rencana",
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "TravelPage"
+        }
+      ],
+      "html": "reference/06-Cari-Kereta.html",
+      "png": "reference/06-Cari-Kereta.png",
+      "text": "reference/06-Cari-Kereta.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2490,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/e84916458dd8487d93dee1629f4320fd"
+    },
+    {
+      "id": "07",
+      "title": "Cari hotel",
+      "route": "travel-hotel",
+      "section": "Rencana",
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "TravelPage"
+        }
+      ],
+      "html": "reference/07-Cari-Hotel.html",
+      "png": "reference/07-Cari-Hotel.png",
+      "text": "reference/07-Cari-Hotel.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2362,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/804e719c9a5c4079a6e7cbaf6ec98e2a"
+    },
+    {
+      "id": "08",
+      "title": "Kalender",
+      "route": "calendar",
+      "section": "Kalender",
+      "implementationStatus": "pending",
+      "scope": "promote",
+      "source": [
+        {
+          "path": "lib/calendar.dart",
+          "symbol": "PlanCalendar"
+        }
+      ],
+      "html": "reference/08-Kalender.html",
+      "png": "reference/08-Kalender.png",
+      "text": "reference/08-Kalender.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2678,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/a25b9a1869e2486fbe8fa571c79c9cc8"
+    },
+    {
+      "id": "09",
+      "title": "Workspace",
+      "route": "workspace",
+      "section": "Workspace",
+      "implementationStatus": "pending",
+      "scope": "promote",
+      "source": [
+        {
+          "path": "lib/workspace_page.dart",
+          "symbol": "WorkspacePage"
+        }
+      ],
+      "html": "reference/09-Workspace-Komunitas.html",
+      "png": "reference/09-Workspace-Komunitas.png",
+      "text": "reference/09-Workspace-Komunitas.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2956,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/0628af24dd5f4d5197e5a6cc5624c2e5"
+    },
+    {
+      "id": "10",
+      "title": "Absen tim",
+      "route": "attendance",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/absen.dart",
+          "symbol": "AbsenSheet"
+        }
+      ],
+      "html": "reference/10-Absen-Tim.html",
+      "png": "reference/10-Absen-Tim.png",
+      "text": "reference/10-Absen-Tim.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2668,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/7a395da4bc6e46ad8177bdca707d53c8"
+    },
+    {
+      "id": "11",
+      "title": "Masuk",
+      "route": "login",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/login_page.dart",
+          "symbol": "LoginPage"
+        }
+      ],
+      "html": "reference/11-Masuk.html",
+      "png": "reference/11-Masuk.png",
+      "text": "reference/11-Masuk.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 1688,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/96431008df324a86812d2f4674164c6f"
+    },
+    {
+      "id": "12",
+      "title": "Daftar",
+      "route": "signup",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/login_page.dart",
+          "symbol": "LoginPage"
+        }
+      ],
+      "html": "reference/12-Daftar.html",
+      "png": "reference/12-Daftar.png",
+      "text": "reference/12-Daftar.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 1688,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/d987d7f112bb4474b5245572869e4c1e"
+    },
+    {
+      "id": "13",
+      "title": "Aktifkan lokasi",
+      "route": "location-gate",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "existing",
+      "source": [
+        {
+          "path": "lib/main.dart",
+          "symbol": "GpsGatePage"
+        }
+      ],
+      "html": "reference/13-Aktifkan-Lokasi.html",
+      "png": "reference/13-Aktifkan-Lokasi.png",
+      "text": "reference/13-Aktifkan-Lokasi.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 1744,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/d304f4ac5eec4d2d889d57c3036c0047"
+    },
+    {
+      "id": "14",
+      "title": "Buat rencana",
+      "route": "plan-create",
+      "section": null,
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/pages.dart",
+          "symbol": "showPlanSheet"
+        }
+      ],
+      "html": "reference/14-Buat-Rencana.html",
+      "png": "reference/14-Buat-Rencana.png",
+      "text": "reference/14-Buat-Rencana.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2468,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/9f69643da9e147b7bb48156fe410c381"
+    },
+    {
+      "id": "15",
+      "title": "Budget & Split",
+      "route": "budget-split",
+      "section": "Keuangan",
+      "implementationStatus": "pending",
+      "scope": "new-page",
+      "source": [
+        {
+          "path": "lib/core.dart",
+          "symbol": "BudgetCalc"
+        }
+      ],
+      "html": "reference/15-Budget-Split.html",
+      "png": "reference/15-Budget-Split.png",
+      "text": "reference/15-Budget-Split.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 1824,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/1da3363d3d3e4449bceb5d58a6eb894b"
+    },
+    {
+      "id": "16",
+      "title": "Pengaturan",
+      "route": "settings",
+      "section": "Workspace",
+      "implementationStatus": "pending",
+      "scope": "expand",
+      "source": [
+        {
+          "path": "lib/main.dart",
+          "symbol": "SettingsPage"
+        }
+      ],
+      "html": "reference/16-Pengaturan.html",
+      "png": "reference/16-Pengaturan.png",
+      "text": "reference/16-Pengaturan.ui.txt",
+      "pngSize": {
+        "width": 780,
+        "height": 2666,
+        "logicalWidth": 390,
+        "deviceScaleFactor": 2
+      },
+      "stitchScreen": "projects/12569152226259471213/screens/c6e5b1417319415c8127bea80380dd98"
+    }
+  ],
+  "assets": [
+    {
+      "path": "docs/ui-v4/reference/01-Beranda.html",
+      "bytes": 38628,
+      "sha256": "44d19d7ac769ff54363ec85d99a5883727f8e4a30e5e08d3016c4d483d28f610"
+    },
+    {
+      "path": "docs/ui-v4/reference/01-Beranda.png",
+      "bytes": 196724,
+      "sha256": "e98495c2cd22bfca311e2b0da7511c1a2bfbc495954257a308dbe6eb5a18f170"
+    },
+    {
+      "path": "docs/ui-v4/reference/01-Beranda.ui.txt",
+      "bytes": 859,
+      "sha256": "07210e9c542dff766cc85de41c9326bd6c064ffe5fd14af68b3fe67e663ad51f"
+    },
+    {
+      "path": "docs/ui-v4/reference/02-Keuangan.html",
+      "bytes": 43277,
+      "sha256": "774def8c7c58bcba5903ec9275e1d73ac79da917ddfbdc89dd163bbbd4452f21"
+    },
+    {
+      "path": "docs/ui-v4/reference/02-Keuangan.png",
+      "bytes": 193832,
+      "sha256": "b671e7d40a1c37c4d036f9234af00bb69493e6e58497fd79b43344be1cd3ce48"
+    },
+    {
+      "path": "docs/ui-v4/reference/02-Keuangan.ui.txt",
+      "bytes": 933,
+      "sha256": "6c4c1598038bb48b0946c14f323f3b23698428a0aec09fe26631dcb144634d9b"
+    },
+    {
+      "path": "docs/ui-v4/reference/03-Rencana.html",
+      "bytes": 34230,
+      "sha256": "84a708bb538630878b9e6a587b3f536ba24561b9fccb1f6e1ae9144a294e87d7"
+    },
+    {
+      "path": "docs/ui-v4/reference/03-Rencana.png",
+      "bytes": 210162,
+      "sha256": "344668ad3a090fec142a94e79a2ef0f0a15838972959f8910e0c98f1fa63656c"
+    },
+    {
+      "path": "docs/ui-v4/reference/03-Rencana.ui.txt",
+      "bytes": 951,
+      "sha256": "66efac345a39e60d44325a013773afec0062c8e37476358490e3126289cb5bfc"
+    },
+    {
+      "path": "docs/ui-v4/reference/04-Detail-Rencana.html",
+      "bytes": 40229,
+      "sha256": "1b67c559f7cb1337a0e477550aad9c50a5584087ea6d76a524bc1b0dbf4be874"
+    },
+    {
+      "path": "docs/ui-v4/reference/04-Detail-Rencana.png",
+      "bytes": 295264,
+      "sha256": "ebdad02a0c4737552e4b37c30a1d367936f1d7c4d8863d66dae62fe60df0b683"
+    },
+    {
+      "path": "docs/ui-v4/reference/04-Detail-Rencana.ui.txt",
+      "bytes": 1236,
+      "sha256": "2c15c82413ebe872dd35905ba98e9ed30634404b6c3ae64a8cd7a4a719ff56ea"
+    },
+    {
+      "path": "docs/ui-v4/reference/05-Tambah-Transaksi.html",
+      "bytes": 30276,
+      "sha256": "719822388fa1d60ca7bfff65f66be4d98b1e1f1f16b2c823e253661ab231b939"
+    },
+    {
+      "path": "docs/ui-v4/reference/05-Tambah-Transaksi.png",
+      "bytes": 116148,
+      "sha256": "4df7b71c6a06231a31e6181f7da34741ec7926bb987848ae06c8dbee0c090ae9"
+    },
+    {
+      "path": "docs/ui-v4/reference/05-Tambah-Transaksi.ui.txt",
+      "bytes": 468,
+      "sha256": "ecb86c5ad27105350e43fa94b46eda06108b7e4d50f542bf196baf49cd26ff84"
+    },
+    {
+      "path": "docs/ui-v4/reference/06-Cari-Kereta.html",
+      "bytes": 36700,
+      "sha256": "8ab937792e1640277e059204af38ee20b86a570f184f48887cacd0f729bff5ec"
+    },
+    {
+      "path": "docs/ui-v4/reference/06-Cari-Kereta.png",
+      "bytes": 191675,
+      "sha256": "9d3930a44f10fa0d92d56ae8bb420d56f2c2baf886a50f524e7336575f2762ca"
+    },
+    {
+      "path": "docs/ui-v4/reference/06-Cari-Kereta.ui.txt",
+      "bytes": 847,
+      "sha256": "4fd7898f19cc235dedcf77a6a7a143fe200c4b49697d902f226348f8e8bd4c8e"
+    },
+    {
+      "path": "docs/ui-v4/reference/07-Cari-Hotel.html",
+      "bytes": 34096,
+      "sha256": "3dee22e902b2b019afa443b7b7ae33c6562102bad7674fcdd27ce1c2686cc9bd"
+    },
+    {
+      "path": "docs/ui-v4/reference/07-Cari-Hotel.png",
+      "bytes": 183688,
+      "sha256": "1ec733097fa9fa0ef0f0a48047aa4db4d6d69bbb8086200bc8dcbf02fa06d541"
+    },
+    {
+      "path": "docs/ui-v4/reference/07-Cari-Hotel.ui.txt",
+      "bytes": 814,
+      "sha256": "972bf4f547f21dce0e41aed24df55e6ba1de87581911db2c55d3922b7194c431"
+    },
+    {
+      "path": "docs/ui-v4/reference/08-Kalender.html",
+      "bytes": 40248,
+      "sha256": "51a12484d904c64261d01c4f16e09e16651233278093cdb174b2913aa0262d32"
+    },
+    {
+      "path": "docs/ui-v4/reference/08-Kalender.png",
+      "bytes": 211158,
+      "sha256": "9ee633dfa1b9b837481bc870cc142a52d7fe3378af470e136dce427a38d685bc"
+    },
+    {
+      "path": "docs/ui-v4/reference/08-Kalender.ui.txt",
+      "bytes": 882,
+      "sha256": "91f07314ab419af95f4dcc0a8c64fee90a0c34830da55b56fff037b513046474"
+    },
+    {
+      "path": "docs/ui-v4/reference/09-Workspace-Komunitas.html",
+      "bytes": 37038,
+      "sha256": "ef8f0051569ab4fc410f32c28e28ec556e684391d9b05dc0c22eb626ba33fbef"
+    },
+    {
+      "path": "docs/ui-v4/reference/09-Workspace-Komunitas.png",
+      "bytes": 189770,
+      "sha256": "b5966d1b99db6deb58b57d34017e8792c6cded644a0ea106f03d0ec4eec3d680"
+    },
+    {
+      "path": "docs/ui-v4/reference/09-Workspace-Komunitas.ui.txt",
+      "bytes": 741,
+      "sha256": "947919d67bfa2fe38dda206b48d0ccff47683b843171ce8d502f51fd0e487bb2"
+    },
+    {
+      "path": "docs/ui-v4/reference/10-Absen-Tim.html",
+      "bytes": 34013,
+      "sha256": "e71e1abff5a088064a661a4ffef438e803fff957ceae53641bdb428ad4ba6a86"
+    },
+    {
+      "path": "docs/ui-v4/reference/10-Absen-Tim.png",
+      "bytes": 207078,
+      "sha256": "c4a551657b88f6e85280e8c98db3534aaecc8cdee951d3342b5cfc05a1d5d110"
+    },
+    {
+      "path": "docs/ui-v4/reference/10-Absen-Tim.ui.txt",
+      "bytes": 824,
+      "sha256": "6decb8e4b3f5d061780206c7dbb34b2d104ea242491f7a0b7e9355abe5a3a46f"
+    },
+    {
+      "path": "docs/ui-v4/reference/11-Masuk.html",
+      "bytes": 27028,
+      "sha256": "77b6b2db474262344abb7a5c963921ae4d7c7408f0646f482ca627a3ec74be07"
+    },
+    {
+      "path": "docs/ui-v4/reference/11-Masuk.png",
+      "bytes": 76981,
+      "sha256": "32f6edcb303b45edd33780d474c224910d621346a3b2d60437f0f435dbb87f06"
+    },
+    {
+      "path": "docs/ui-v4/reference/11-Masuk.ui.txt",
+      "bytes": 285,
+      "sha256": "ee960b9c24f826188889b73b70fc20b53fe600ae4a953ef739c583554fe58e0e"
+    },
+    {
+      "path": "docs/ui-v4/reference/12-Daftar.html",
+      "bytes": 25989,
+      "sha256": "b2b6b75fb96ea40d347f1fba439bcb31e058f872c327c2710ced71f0ea9742a3"
+    },
+    {
+      "path": "docs/ui-v4/reference/12-Daftar.png",
+      "bytes": 72538,
+      "sha256": "88e503ccbcea527897854268ae7e3a4f0c35460afad690b8084c1c6dff3e3e62"
+    },
+    {
+      "path": "docs/ui-v4/reference/12-Daftar.ui.txt",
+      "bytes": 263,
+      "sha256": "c8281118f860cbd03eb66594c9fd8cf5d2db4bf6c5de458fc8f33027aeaa9f32"
+    },
+    {
+      "path": "docs/ui-v4/reference/13-Aktifkan-Lokasi.html",
+      "bytes": 27851,
+      "sha256": "9e0b63d90854bee44f9a68cf9d0de69a08ea3b5788e5d75103a56e43f51798da"
+    },
+    {
+      "path": "docs/ui-v4/reference/13-Aktifkan-Lokasi.png",
+      "bytes": 121153,
+      "sha256": "fb2508b05cfdf36548b0c56ddfe4f56ccdbeef7af4926bdd52446ec345fe36b1"
+    },
+    {
+      "path": "docs/ui-v4/reference/13-Aktifkan-Lokasi.ui.txt",
+      "bytes": 508,
+      "sha256": "7585faf8065e79e830eb9d6d01757f88bc2b3a20bb4c3e2babd36042d9e514b9"
+    },
+    {
+      "path": "docs/ui-v4/reference/14-Buat-Rencana.html",
+      "bytes": 32817,
+      "sha256": "c73a1976a180920061199576d0d3540ce42f7e4ca10e9a5e061a24ea922ffd7f"
+    },
+    {
+      "path": "docs/ui-v4/reference/14-Buat-Rencana.png",
+      "bytes": 175241,
+      "sha256": "cc0c1f9c33f50dbbb34149e7110aad4bcec6bfaf585995957d684da569796443"
+    },
+    {
+      "path": "docs/ui-v4/reference/14-Buat-Rencana.ui.txt",
+      "bytes": 673,
+      "sha256": "b36389c6af0d285a4bdd144d5f2c57ea18b0746a160af1c12360021da4cafe9b"
+    },
+    {
+      "path": "docs/ui-v4/reference/15-Budget-Split.html",
+      "bytes": 33794,
+      "sha256": "52a6ea6531f910ba3bb699b3029d377db961957776673979ad8bfc547873987d"
+    },
+    {
+      "path": "docs/ui-v4/reference/15-Budget-Split.png",
+      "bytes": 123969,
+      "sha256": "99dfbee14647be9d3149ed4d583262a376418f65f14814004da0617d3c175652"
+    },
+    {
+      "path": "docs/ui-v4/reference/15-Budget-Split.ui.txt",
+      "bytes": 533,
+      "sha256": "51ad6ec83f570df1d73fb9d3d9d63dba4649cb7134e51aa71552c590ac7a6710"
+    },
+    {
+      "path": "docs/ui-v4/reference/16-Pengaturan.html",
+      "bytes": 35344,
+      "sha256": "5618d14a7f17819d492e4e6bea07480e3488bed0f6a82870b7f8d6201dfc9ae5"
+    },
+    {
+      "path": "docs/ui-v4/reference/16-Pengaturan.png",
+      "bytes": 167817,
+      "sha256": "be61909087908eef5d2468331d317c319390facce920e9962c0a5cbd934adb21"
+    },
+    {
+      "path": "docs/ui-v4/reference/16-Pengaturan.ui.txt",
+      "bytes": 735,
+      "sha256": "9359441039e38b9f1319e70d03f8cebda11280fa395a6e64c017097a664494a6"
+    },
+    {
+      "path": "docs/ui-v4/reference/rangkai-ui.css",
+      "bytes": 9091,
+      "sha256": "20c5d8ee38fd2c8cdff78c0212cd4bc5e7030fbd08fd8eefb7431913ae88cdd1"
+    },
+    {
+      "path": "docs/ui-v4/reference/assets/Font-NOTICES.Z",
+      "bytes": 107583,
+      "sha256": "e3f4df5f6b12f56e6c4f7166e7b63cbc25579207b62ee410dcd92c6df61e6a7f"
+    },
+    {
+      "path": "docs/ui-v4/reference/assets/Inter.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "path": "docs/ui-v4/reference/assets/MaterialSymbolsOutlined0.ttf",
+      "bytes": 971460,
+      "sha256": "1a27166d434fb6cf42ce163b8d27049a156562a440593f5d6eb83b72bc8bd979"
+    },
+    {
+      "path": "docs/ui-v4/reference/assets/SourceSerif4.ttf",
+      "bytes": 1209508,
+      "sha256": "97b2d4da6e3cb494b5a1e66ae176914d852ccabef49e0c02c0df25f3e39aca0b"
+    },
+    {
+      "path": "docs/ui-v4/reference/assets/symbols.css",
+      "bytes": 457,
+      "sha256": "e2ae4e97d557d17a13038fa97857612b712adb85e8a62d58ecaf831167f3de36"
+    },
+    {
+      "path": "docs/ui-v4/reference/index.html",
+      "bytes": 5645,
+      "sha256": "44ad986f14fc0fba8b2d0bef8b1eb38cadaad247c7ecac1209f095cdc8878a01"
+    }
+  ]
+}

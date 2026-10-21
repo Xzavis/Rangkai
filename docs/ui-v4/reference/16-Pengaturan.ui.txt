@@ -1,0 +1,51 @@
+Pengaturan — Rangkai
+09:41
+signal_cellular_alt
+wifi
+battery_full
+arrow_back
+Pengaturan
+R
+Rian
+Tersambung
+rian@example.com
+Tampilan
+light_mode
+Terang
+dark_mode
+Gelap
+settings_suggest
+Sistem
+Workspace
+folder
+Workspace Aktif: Pribadi
+Data tersimpan di perangkat
+Ganti
+swap_horiz
+Opsi beralih:
+Komunitas Rangkai
+arrow_forward
+Data aplikasi
+content_copy
+Salin ringkasan data
+Format teks ringkas untuk buku catatan
+chevron_right
+restart_alt
+Reset ke data contoh
+Transaksi dan rencana saat ini dihapus, lalu diganti data contoh.
+Perlu konfirmasi sebelum data dihapus.
+history
+Tinjau reset data
+logout
+Keluar akun
+Rangkai 4.0.0 beta
+home
+Beranda
+account_balance_wallet
+Keuangan
+explore
+Rencana
+calendar_today
+Kalender
+folder_shared
+Workspace

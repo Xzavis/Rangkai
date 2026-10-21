@@ -1,6 +1,18 @@
 # Rangkai — Semua terangkai.
 
-App Flutter Android: keuangan, rencana dan rundown manual, budget vs realisasi, GPS realtime wajib, pencarian hotel dan stasiun asli dari peta. Versi 3.0.0 menggunakan Forui, tema biru light/dark, dan ikon custom SVG.
+App Flutter Android: keuangan, rencana dan rundown manual, budget vs realisasi, GPS realtime wajib, pencarian hotel dan stasiun asli dari peta. Source memakai Forui dan Material dengan tema light/dark. `pubspec.yaml` saat handoff: 4.0.0+1. Desain UI v4 baru tersedia sebagai paket referensi untuk implementasi.
+
+## UI baru untuk Muse Agent Code
+
+Mulai dari **[MUSE_HANDOFF.md](MUSE_HANDOFF.md)** dan [AGENTS.md](AGENTS.md). Paket berisi16 PNG/HTML final, token, fixture konsisten, pemetaan ke source Flutter, gap data/layanan dan urutan acceptance implementasi.
+
+- [Galeri referensi offline](docs/ui-v4/reference/index.html) · [Indeks dan spesifikasi](docs/ui-v4/README.md).
+- [Arah desain terbaru](DESIGN.md) · [Rencana implementasi](docs/ui-v4/IMPLEMENTATION.md) · [Gap terhadap source](docs/ui-v4/GAPS.md).
+- Validasi paket: `python3 tools/validate_ui_handoff.py`.
+
+**Status:** paket UI sudah disiapkan; Dart belum dipindahkan ke UI baru dan tidak ada build APK baru dari handoff ini. Bagian "UI versi3" di bawah adalah riwayat baseline. Aturan visual terbaru memakai lima tab dan radius16/12, bukan empat tab/radius6. Kontrak layanan tetap berlaku.
+
+GitHub menampilkan source HTML. Checkout/download repo lalu buka galeri lokal untuk pratinjau offline. Tidak perlu menyalin file dari folder Download pribadi agar Muse bisa membaca referensi.
 
 ## Jalanin dari source
 
@@ -30,7 +42,7 @@ Supabase Storage bucket `absensi` — tanpa konfigurasi tambahan.
 
 APK hasil build: `build/app/outputs/flutter-apk/app-release.apk`.
 
-## Sistem UI versi 3
+## Sistem UI versi 3 — riwayat sebelum port v4
 
 - Arahan desain dan layout: [DESIGN.md](DESIGN.md).
 - CSS light/dark: [assets/theme.css](assets/theme.css). Flutter menggunakan padanan

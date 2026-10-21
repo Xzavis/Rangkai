@@ -1,0 +1,1449 @@
+[
+  {
+    "screen": "01 — Beranda",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": "page"
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": "page"
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": "page"
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": "page"
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "hideBalance": true,
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "02 — Keuangan",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": "page"
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": "page"
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": "page"
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": "page"
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "primaryActionInFlow": true,
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "03 — Rencana",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": "page"
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": "page"
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": "page"
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": "page"
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "04 — Detail Rencana",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "05 — Tambah Transaksi",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "06 — Cari Kereta",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "07 — Cari Hotel",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "08 — Kalender",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": "page"
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": "page"
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": "page"
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": "page"
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "09 — Workspace Komunitas",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": "page"
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": "page"
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": "page"
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": "page"
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "10 — Absen Tim",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "11 — Masuk",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "passwordToggle": true,
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "12 — Daftar",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "13 — Aktifkan Lokasi",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "14 — Buat Rencana",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": []
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": []
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "15 — Budget & Split",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  },
+  {
+    "screen": "16 — Pengaturan",
+    "sizes": [
+      {
+        "requestedWidth": 360,
+        "height": 800,
+        "width": 360,
+        "viewport": 360,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 390,
+        "height": 844,
+        "width": 390,
+        "viewport": 390,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      },
+      {
+        "requestedWidth": 430,
+        "height": 932,
+        "width": 430,
+        "viewport": 430,
+        "bad": [],
+        "unnamed": 0,
+        "nav": [
+          {
+            "href": "01-Beranda.html",
+            "current": null
+          },
+          {
+            "href": "02-Keuangan.html",
+            "current": null
+          },
+          {
+            "href": "03-Rencana.html",
+            "current": null
+          },
+          {
+            "href": "08-Kalender.html",
+            "current": null
+          },
+          {
+            "href": "09-Workspace-Komunitas.html",
+            "current": null
+          }
+        ]
+      }
+    ],
+    "text200Percent": {
+      "width": 390,
+      "viewport": 390,
+      "bad": [],
+      "unnamed": 0,
+      "nav": [
+        {
+          "href": "01-Beranda.html",
+          "current": null
+        },
+        {
+          "href": "02-Keuangan.html",
+          "current": null
+        },
+        {
+          "href": "03-Rencana.html",
+          "current": null
+        },
+        {
+          "href": "08-Kalender.html",
+          "current": null
+        },
+        {
+          "href": "09-Workspace-Komunitas.html",
+          "current": null
+        }
+      ]
+    },
+    "consoleErrors": [],
+    "interactions": {
+      "focusVisible": true
+    }
+  }
+]
