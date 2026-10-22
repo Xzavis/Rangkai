@@ -61,7 +61,7 @@ class _CheckpointSectionState extends State<CheckpointSection> {
     if (widget.ws == null) {
       return CpiCard(
         child: Padding(
-          padding: const EdgeInsets.all(18),
+          padding: const EdgeInsets.all(20),
           child: Text(
             'Absen tim aktif setelah masuk + workspace tersambung.',
             style: tt.bodyMedium,
@@ -81,7 +81,7 @@ class _CheckpointSectionState extends State<CheckpointSection> {
     );
     return CpiCard(
       child: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -308,6 +308,7 @@ class _AbsenSheetState extends State<AbsenSheet> {
               ),
               IconButton(
                 tooltip: 'Kurangi',
+                constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
                 icon: const Icon(Icons.remove_circle_outline),
                 onPressed: _busy || _headcount <= 1
                     ? null
@@ -318,6 +319,7 @@ class _AbsenSheetState extends State<AbsenSheet> {
                       ?.copyWith(fontWeight: FontWeight.w800)),
               IconButton(
                 tooltip: 'Tambah',
+                constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
                 icon: const Icon(Icons.add_circle_outline),
                 onPressed: _busy
                     ? null
@@ -327,8 +329,31 @@ class _AbsenSheetState extends State<AbsenSheet> {
           ),
           if (widget.location.pos != null)
             Text(
-              'GPS: ${widget.location.pos!.latitude.toStringAsFixed(5)}, ${widget.location.pos!.longitude.toStringAsFixed(5)} (±${widget.location.pos!.accuracy.toStringAsFixed(0)} m)',
+              'GPS aktif · akurasi ±${widget.location.pos!.accuracy.toStringAsFixed(0)} m (koordinat dicatat di bukti)',
               style: tt.bodySmall,
+            ),
+          const SizedBox(height: 12),
+          Text('Kriteria validasi',
+              style: tt.titleSmall?.copyWith(fontWeight: FontWeight.w700)),
+          const SizedBox(height: 4),
+          for (final c in [
+            (_photo != null, _photo != null ? 'Foto grup siap (1 file terlampir)' : 'Foto grup belum diambil'),
+            (
+              AttendanceRules.validateHeadcount(_headcount, widget.memberCount) == null,
+              '$_headcount orang dalam foto (anggota aktif ${widget.memberCount})',
+            ),
+            (widget.location.pos != null, widget.location.pos != null ? 'Lokasi GPS tercatat' : 'Lokasi GPS belum terbaca'),
+            (false, 'Radius titik kumpul belum diatur untuk titik ini'),
+          ])
+            ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              leading: Icon(
+                c.$1 ? Icons.check_circle : Icons.radio_button_unchecked,
+                size: 20,
+                color: c.$1 ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.outline,
+              ),
+              title: Text(c.$2, style: tt.bodySmall),
             ),
           if (_error != null) ...[
             const SizedBox(height: 8),
@@ -338,8 +363,15 @@ class _AbsenSheetState extends State<AbsenSheet> {
           ],
           const SizedBox(height: 16),
           CpiButton(
+            busy: _busy,
             onPressed: _busy ? null : _submit,
             child: Text(_busy ? 'Mengirim...' : 'Kirim absen'),
+          ),
+          const SizedBox(height: 8),
+          CpiButton(
+            secondary: true,
+            onPressed: _busy ? null : () => Navigator.pop(context, false),
+            child: const Text('Batal'),
           ),
         ],
       ),

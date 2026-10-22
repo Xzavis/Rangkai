@@ -55,3 +55,13 @@ app.*.map.json
 /.wrangler/
 /CPI-v3.0.0/
 /android/build/
+
+# File lokal Supabase CLI (identitas proyek, bukan untuk repo)
+/supabase/.temp/
+
+# Kredensial lokal (jangan pernah commit)
+.env
+.env.*
+!.env.example
+
+dart_define.json

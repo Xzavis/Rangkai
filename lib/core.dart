@@ -43,6 +43,47 @@ String jam(DateTime d) =>
     '${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}:${d.second.toString().padLeft(2, '0')}';
 
 // ---------- Models ----------
+/// Nilai stabil yang tersimpan (bukan label terjemahan sesaat).
+const txCategories = <String>[
+  'Umum',
+  'Makan',
+  'Transport',
+  'Hotel',
+  'Belanja',
+  'Hiburan',
+  'Kesehatan',
+  'Pendapatan',
+  'Lainnya',
+];
+
+/// Label hari relatif untuk grup transaksi (referensi 02).
+String dayLabel(DateTime day, DateTime now) {
+  final d = DateTime(day.year, day.month, day.day);
+  final today = DateTime(now.year, now.month, now.day);
+  if (d == today) return 'Hari ini — ${tgl(day)}';
+  if (d == today.subtract(const Duration(days: 1))) {
+    return 'Kemarin — ${tgl(day)}';
+  }
+  return tgl(day);
+}
+
+/// "2 Hari 1 Malam" dari rentang rencana (referensi 04).
+String planDurationLabel(Plan p) {
+  final days = p.lastDay.difference(DateTime(p.date.year, p.date.month, p.date.day)).inDays + 1;
+  if (days <= 1) return '1 Hari';
+  return '$days Hari ${days - 1} Malam';
+}
+
+/// Status rencana dari tanggal (referensi 01/03/04).
+String planStatusLabel(Plan p, DateTime now) {
+  final today = DateTime(now.year, now.month, now.day);
+  final start = DateTime(p.date.year, p.date.month, p.date.day);
+  final end = DateTime(p.lastDay.year, p.lastDay.month, p.lastDay.day);
+  if (today.isBefore(start)) return 'Mendatang';
+  if (today.isAfter(end)) return 'Sudah lewat';
+  return 'Sedang Berlangsung';
+}
+
 class Tx {
   Tx({
     required this.id,
@@ -50,12 +91,17 @@ class Tx {
     required this.amount,
     required this.date,
     this.planId,
+    this.category = 'Umum',
+    this.note = '',
   });
   final String id, title;
   final double amount; // + income, - expense
   final DateTime date;
+  final String category;
+  final String note;
   String?
   planId; // dilepas (jadi null) saat rencana selesai dan dihapus otomatis
+  bool get isIncome => amount > 0;
 }
 
 class Rundown {
@@ -81,12 +127,17 @@ class Plan {
     required this.place,
     required this.date,
     required this.budget,
+    this.endDate,
     this.lat,
     this.lng,
     List<Rundown>? rundown,
   }) : rundown = rundown ?? [];
   final String id, title, place;
   final DateTime date;
+
+  /// Tanggal akhir opsional. null (data lama) = satu hari, ikut [date].
+  final DateTime? endDate;
+  DateTime get lastDay => endDate ?? date;
   final double budget;
   final double? lat,
       lng; // koordinat tujuan dari pencarian tempat, dipakai GPS tracking
@@ -103,8 +154,13 @@ class Offer {
     required this.to,
     required this.price,
     required this.meta,
+    this.lat,
+    this.lng,
   });
   final String kind, name, from, to, meta; // kind: 'kereta' | 'hotel'
+
+  /// Koordinat hasil OSM yang nyata (null hanya pada contoh awal).
+  final double? lat, lng;
   double price;
   double delta = 0;
 }
@@ -151,6 +207,66 @@ class BudgetCalc {
   static double sisa(double budget, double spent) => budget - spent;
   static double ratio(double budget, double spent) =>
       budget <= 0 ? 0 : (spent / budget).clamp(0, 1).toDouble();
+
+  /// Patungan rata dalam rupiah bulat. [per] = floor bagi, [remainder] =
+  /// rupiah tersisa yang tidak habis dibagi (ditampilkan apa adanya,
+  /// tidak diam-diam dibulatkan). people<1 dianggap 1. Bukan transfer.
+  static ({int per, int remainder}) splitEqual(num total, int people) {
+    final n = people < 1 ? 1 : people;
+    final t = total < 0 ? 0 : total.round();
+    return (per: t ~/ n, remainder: t % n);
+  }
+}
+
+enum TxFilter { all, income, expense }
+
+/// Filter daftar Keuangan (murni, dites): teks pada judul/kategori/catatan,
+/// bulan dari [month] (null = semua bulan), dan jenis dari tanda amount.
+/// Hasil terurut tanggal transaksi terbaru dulu, bukan urutan insert.
+List<Tx> filterTxs(
+  List<Tx> txs, {
+  String query = '',
+  DateTime? month,
+  TxFilter type = TxFilter.all,
+}) {
+  final q = query.trim().toLowerCase();
+  final out = txs.where((t) {
+    if (month != null &&
+        (t.date.year != month.year || t.date.month != month.month)) {
+      return false;
+    }
+    if (type == TxFilter.income && t.amount <= 0) return false;
+    if (type == TxFilter.expense && t.amount >= 0) return false;
+    if (q.isNotEmpty &&
+        !t.title.toLowerCase().contains(q) &&
+        !t.category.toLowerCase().contains(q) &&
+        !t.note.toLowerCase().contains(q)) {
+      return false;
+    }
+    return true;
+  }).toList()
+    ..sort((a, b) => b.date.compareTo(a.date));
+  return out;
+}
+
+/// Kelompokkan transaksi per hari (tanggal transaksi), hari terbaru dulu.
+List<({DateTime day, List<Tx> items, double subtotal})> groupTxsByDay(
+  List<Tx> txs,
+) {
+  final byDay = <DateTime, List<Tx>>{};
+  for (final t in txs) {
+    final k = DateTime(t.date.year, t.date.month, t.date.day);
+    (byDay[k] ??= []).add(t);
+  }
+  final days = byDay.keys.toList()..sort((a, b) => b.compareTo(a));
+  return [
+    for (final d in days)
+      (
+        day: d,
+        items: byDay[d]!,
+        subtotal: byDay[d]!.fold<double>(0, (s, t) => s + t.amount),
+      ),
+  ];
 }
 
 // ---------- Store: in-memory ----------
@@ -168,6 +284,10 @@ class Store extends ChangeNotifier {
       txs.where((t) => t.amount < 0).fold(0, (s, t) => s - t.amount);
   double get balance => income - expense;
   double spentOf(Plan p) => BudgetCalc.spentOf(txs, p.id);
+
+  /// Transaksi terurut tanggal aktual terbaru dulu (untuk daftar ringkas).
+  List<Tx> get recentTxs =>
+      [...txs]..sort((a, b) => b.date.compareTo(a.date));
 
   /// null = sukses, string = pesan error (perubahan lokal dibatalkan).
   Future<String?> reset() async {
@@ -205,7 +325,15 @@ class Store extends ChangeNotifier {
     }
     txs.insert(
       0,
-      Tx(id: id, title: t.title, amount: t.amount, date: t.date, planId: t.planId),
+      Tx(
+        id: id,
+        title: t.title,
+        amount: t.amount,
+        date: t.date,
+        planId: t.planId,
+        category: t.category,
+        note: t.note,
+      ),
     );
     notifyListeners();
     return null;
@@ -222,24 +350,38 @@ class Store extends ChangeNotifier {
   }
 
   Future<String?> addPlan(Plan p) async {
+    if (p.endDate != null && p.endDate!.isBefore(DateTime(p.date.year, p.date.month, p.date.day))) {
+      return 'Tanggal akhir tidak boleh sebelum tanggal mulai.';
+    }
     var id = p.id;
     if (cloud != null) {
       final res = await cloud!.insertPlan(p);
       if (res.error != null) return res.error;
       id = res.id!;
     }
-    plans.insert(
-      0,
-      Plan(
-        id: id,
-        title: p.title,
-        place: p.place,
-        date: p.date,
-        budget: p.budget,
-        lat: p.lat,
-        lng: p.lng,
-      ),
+    // Rundown awal ikut tersimpan; bentuk ulang tanpa menyalinnya adalah
+    // bug lama (field diam-diam terbuang).
+    final saved = Plan(
+      id: id,
+      title: p.title,
+      place: p.place,
+      date: p.date,
+      budget: p.budget,
+      endDate: p.endDate,
+      lat: p.lat,
+      lng: p.lng,
+      rundown: [...p.rundown],
     );
+    plans.insert(0, saved);
+    if (cloud != null) {
+      for (final r in p.rundown) {
+        final res = await cloud!.insertRundown(id, r, p.date);
+        if (res.error != null) {
+          notifyListeners();
+          return 'Rencana tersimpan, tapi rundown "${r.title}" gagal: ${res.error}';
+        }
+      }
+    }
     notifyListeners();
     return null;
   }
@@ -319,7 +461,12 @@ class Store extends ChangeNotifier {
     return null;
   }
 
-  static String newId() => DateTime.now().microsecondsSinceEpoch.toString();
+  /// ID lokal tidak bisa ditebak dari jam dinding (Random.secure).
+  static String newId() {
+    final r = Random.secure();
+    final bytes = List.generate(9, (_) => r.nextInt(256));
+    return bytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join();
+  }
 
   void seed() {
     if (plans.isNotEmpty) return;
@@ -493,10 +640,11 @@ class GeoApi {
   }
 
   static Future<List<Place>> searchPlace(String q) async {
-    if (q.trim().isEmpty) return [];
+    final query = q.trim();
+    if (query.isEmpty || query.length > 120) return [];
     final data = await _get(
       Uri.https('nominatim.openstreetmap.org', '/search', {
-        'q': q,
+        'q': query,
         'format': 'json',
         'limit': '8',
         'addressdetails': '0',
@@ -623,6 +771,8 @@ class TravelService extends ChangeNotifier {
                   to: p.detail.isEmpty ? 'Dekat pusat area' : p.detail,
                   price: _estimasi(p.name, 185000, 900000),
                   meta: 'Nama asli dari OpenStreetMap. Harga estimasi live per malam.',
+                  lat: p.lat,
+                  lng: p.lng,
                 )
               : Offer(
                   kind: kind,
@@ -631,6 +781,8 @@ class TravelService extends ChangeNotifier {
                   to: p.name,
                   price: _estimasi(p.name, 85000, 420000),
                   meta: 'Stasiun asli dari OpenStreetMap. Harga estimasi live, bukan tarif resmi KAI.',
+                  lat: p.lat,
+                  lng: p.lng,
                 ),
         );
       }

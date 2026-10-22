@@ -31,7 +31,7 @@ FThemeData get lightTheme {
       decoration: BoxDecoration(
         color: colors.card,
         border: Border.all(color: colors.border),
-        borderRadius: BorderRadius.circular(CpiTokens.radius),
+        borderRadius: BorderRadius.circular(CpiTokens.panelRadius),
       ),
       titleTextStyle: typography.body.md,
       subtitleTextStyle: typography.body.sm,
@@ -60,7 +60,7 @@ FThemeData get darkTheme {
       decoration: BoxDecoration(
         color: colors.card,
         border: Border.all(color: colors.border),
-        borderRadius: BorderRadius.circular(CpiTokens.radius),
+        borderRadius: BorderRadius.circular(CpiTokens.panelRadius),
       ),
       titleTextStyle: typography.body.md,
       subtitleTextStyle: typography.body.sm,

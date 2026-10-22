@@ -1,0 +1,2 @@
+# CLI uses only the Python standard library; MCP uses the official SDK.
+mcp==1.28.1

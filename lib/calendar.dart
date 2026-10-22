@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import 'components.dart';
 import 'core.dart';
+import 'theme/tokens.dart';
 import 'workspace.dart';
 import 'widgets.dart';
 import 'pages.dart' show PlanDetailPage;
@@ -63,11 +65,16 @@ class _PlanCalendarState extends State<PlanCalendar> {
             : -2;
         return CpiCard(
           child: Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(CpiTokens.panelPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  '${widget.store.plans.where((p) => p.date.month == _focused.month && p.date.year == _focused.year).length} rencana bulan ini',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 TableCalendar<AgendaItem>(
+                  startingDayOfWeek: StartingDayOfWeek.monday,
                   firstDay: DateTime.now().subtract(const Duration(days: 365)),
                   lastDay: DateTime.now().add(const Duration(days: 730)),
                   focusedDay: _focused,
@@ -100,24 +107,21 @@ class _PlanCalendarState extends State<PlanCalendar> {
                     text: 'Pilih tanggal bertitik untuk lihat acara.',
                   )
                 else
-                  for (final i in items)
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      dense: true,
-                      leading: Chip(label: Text(i.rundown.time)),
-                      title: Text(i.rundown.title,
-                          maxLines: 1, overflow: TextOverflow.ellipsis),
-                      subtitle: Text(i.plan.title),
-                      trailing: i.rundown.done
-                          ? const Icon(Icons.check_circle,
-                              color: Colors.green, size: 20)
-                          : null,
+                  for (var idx = 0; idx < items.length; idx++)
+                    AgendaRow(
+                      rundown: items[idx].rundown,
+                      subtitle: items[idx].plan.title,
+                      stateLabel: items[idx].rundown.done
+                          ? 'Selesai'
+                          : (live && idx == aktif)
+                              ? 'Berlangsung'
+                              : 'Belum mulai',
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (_) => PlanDetailPage(
                             store: widget.store,
-                            plan: i.plan,
+                            plan: items[idx].plan,
                             location: widget.location,
                             ws: widget.ws,
                           ),

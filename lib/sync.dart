@@ -14,20 +14,24 @@ class CloudSync {
   final SupabaseClient _client;
   String workspaceId;
 
+  String? get _uid => _client.auth.currentUser?.id;
+
   static String dateKey(DateTime d) =>
       '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
   // ----- converters (murni) -----
   // Baris insert TANPA id: biar Postgres yang isi gen_random_uuid().
   // id uuid dikembalikan server, lalu dipakai sebagai id lokal.
-  static Map<String, dynamic> planRow(Plan p, String workspaceId) => {
+  static Map<String, dynamic> planRow(Plan p, String workspaceId, {String? createdBy}) => {
         'workspace_id': workspaceId,
+        if (createdBy != null) 'created_by': createdBy,
         'title': p.title,
         'place': p.place,
         'lat': p.lat,
         'lng': p.lng,
         'budget': p.budget,
         'date': dateKey(p.date),
+        'end_date': p.endDate == null ? null : dateKey(p.endDate!),
       };
 
   static Plan planFrom(Map<String, dynamic> m) => Plan(
@@ -35,13 +39,17 @@ class CloudSync {
         title: m['title'] as String,
         place: (m['place'] ?? '') as String,
         date: DateTime.parse(m['date'] as String),
+        endDate: m['end_date'] == null
+            ? null
+            : DateTime.parse(m['end_date'] as String),
         budget: (m['budget'] as num).toDouble(),
         lat: (m['lat'] as num?)?.toDouble(),
         lng: (m['lng'] as num?)?.toDouble(),
       );
 
-  static Map<String, dynamic> rundownRow(Rundown r, String planId, DateTime fallbackDay) => {
+  static Map<String, dynamic> rundownRow(Rundown r, String planId, DateTime fallbackDay, {String? createdBy}) => {
         'plan_id': planId,
+        if (createdBy != null) 'created_by': createdBy,
         'day': dateKey(r.day ?? fallbackDay),
         'time': r.time,
         'title': r.title,
@@ -58,12 +66,15 @@ class CloudSync {
         day: m['day'] == null ? null : DateTime.parse(m['day'] as String),
       );
 
-  static Map<String, dynamic> txRow(Tx t, String workspaceId) => {
+  static Map<String, dynamic> txRow(Tx t, String workspaceId, {String? createdBy}) => {
         'workspace_id': workspaceId,
+        if (createdBy != null) 'created_by': createdBy,
         'title': t.title,
         'amount': t.amount,
         'date': t.date.toIso8601String(),
         'plan_id': t.planId,
+        'category': t.category,
+        'note': t.note,
       };
 
   static Tx txFrom(Map<String, dynamic> m) => Tx(
@@ -72,7 +83,27 @@ class CloudSync {
         amount: (m['amount'] as num).toDouble(),
         date: DateTime.parse(m['date'] as String),
         planId: m['plan_id'] as String?,
+        // Baris lama (sebelum migrasi 004) tetap terbaca.
+        category: (m['category'] ?? 'Umum') as String,
+        note: (m['note'] ?? '') as String,
       );
+
+  /// Backend live belum tentu sudah migrasi 004. Bila PostgREST menolak
+  /// kolom baru (42703 / PGRST204), tulis ulang tanpa kolom itu agar
+  /// sinkron tidak putus total; field baru aktif setelah migrasi jalan.
+  static bool _missingColumn(Object e) {
+    if (e is! PostgrestException) return false;
+    final msg = '${e.code} ${e.message}'.toLowerCase();
+    return msg.contains('42703') ||
+        msg.contains('pgrst204') ||
+        msg.contains('column') && msg.contains('does not exist') ||
+        msg.contains('could not find');
+  }
+
+  static Map<String, dynamic> _without(
+    Map<String, dynamic> row,
+    List<String> keys,
+  ) => {...row}..removeWhere((k, _) => keys.contains(k));
 
   static String friendly(Object e) {
     if (e is PostgrestException) {
@@ -126,18 +157,42 @@ class CloudSync {
   // Insert mengembalikan id uuid server (atau error). Update/delete pakai id.
   Future<Push> insertPlan(Plan p) async {
     try {
-      final row = await _client.from('plans').insert(planRow(p, workspaceId)).select('id').single();
+      final row = await _client.from('plans').insert(planRow(p, workspaceId, createdBy: _uid)).select('id').single();
       return (id: row['id'] as String, error: null);
     } catch (e) {
+      if (_missingColumn(e)) {
+        try {
+          final row = await _client
+              .from('plans')
+              .insert(_without(planRow(p, workspaceId, createdBy: _uid), ['end_date']))
+              .select('id')
+              .single();
+          return (id: row['id'] as String, error: null);
+        } catch (e2) {
+          return (id: null, error: friendly(e2));
+        }
+      }
       return (id: null, error: friendly(e));
     }
   }
 
   Future<Push> insertTx(Tx t) async {
     try {
-      final row = await _client.from('transactions').insert(txRow(t, workspaceId)).select('id').single();
+      final row = await _client.from('transactions').insert(txRow(t, workspaceId, createdBy: _uid)).select('id').single();
       return (id: row['id'] as String, error: null);
     } catch (e) {
+      if (_missingColumn(e)) {
+        try {
+          final row = await _client
+              .from('transactions')
+              .insert(_without(txRow(t, workspaceId, createdBy: _uid), ['category', 'note']))
+              .select('id')
+              .single();
+          return (id: row['id'] as String, error: null);
+        } catch (e2) {
+          return (id: null, error: friendly(e2));
+        }
+      }
       return (id: null, error: friendly(e));
     }
   }
@@ -146,7 +201,7 @@ class CloudSync {
     try {
       final row = await _client
           .from('rundowns')
-          .insert(rundownRow(r, planId, fallbackDay))
+          .insert(rundownRow(r, planId, fallbackDay, createdBy: _uid))
           .select('id')
           .single();
       return (id: row['id'] as String, error: null);

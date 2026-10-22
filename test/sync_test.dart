@@ -51,6 +51,84 @@ void main() {
     expect(s.balance, -100); // expense 100 tetap tercatat
   });
 
+  test('tx kategori/catatan + plan endDate bolak-balik utuh', () {
+    final t = Tx(
+      id: 'x',
+      title: 'Makan',
+      amount: -150000,
+      date: DateTime(2026, 10, 24),
+      category: 'Makanan',
+      note: 'di Braga',
+    );
+    final back = CloudSync.txFrom({...CloudSync.txRow(t, 'ws'), 'id': 'x'});
+    expect(back.category, 'Makanan');
+    expect(back.note, 'di Braga');
+    expect(back.date, DateTime(2026, 10, 24));
+
+    final p = Plan(
+      id: 'p',
+      title: 'Trip',
+      place: 'Bandung',
+      date: DateTime(2026, 10, 24),
+      endDate: DateTime(2026, 10, 26),
+      budget: 100,
+    );
+    final pb = CloudSync.planFrom({...CloudSync.planRow(p, 'ws'), 'id': 'p'});
+    expect(pb.endDate, DateTime(2026, 10, 26));
+    expect(pb.lastDay, DateTime(2026, 10, 26));
+  });
+
+  test('baris lama tanpa kolom baru tetap terbaca', () {
+    final t = CloudSync.txFrom({
+      'id': 'old',
+      'title': 'lama',
+      'amount': 10,
+      'date': '2026-01-01T00:00:00',
+    });
+    expect(t.category, 'Umum');
+    expect(t.note, '');
+    final p = CloudSync.planFrom({
+      'id': 'old',
+      'title': 'lama',
+      'place': '',
+      'date': '2026-01-01',
+      'budget': 5,
+    });
+    expect(p.endDate, isNull);
+    expect(p.lastDay, DateTime(2026, 1, 1));
+  });
+
+  test('addPlan menyalin rundown awal & menolak rentang terbalik', () async {
+    final s = Store();
+    final err = await s.addPlan(
+      Plan(
+        id: 'p1',
+        title: 'Trip',
+        place: 'X',
+        date: DateTime(2026, 10, 24),
+        endDate: DateTime(2026, 10, 26),
+        budget: 100,
+        rundown: [Rundown(id: 'r', time: '07:00', title: 'Berangkat')],
+      ),
+    );
+    expect(err, isNull);
+    expect(s.plans.single.rundown.single.title, 'Berangkat');
+    expect(s.plans.single.endDate, DateTime(2026, 10, 26));
+
+    final err2 = await s.addPlan(
+      Plan(
+        id: 'p2',
+        title: 'Salah',
+        place: 'X',
+        date: DateTime(2026, 10, 26),
+        endDate: DateTime(2026, 10, 24),
+        budget: 100,
+      ),
+    );
+    expect(err2, isNotNull);
+    expect(s.plans.length, 1);
+  });
+
   test('add lokal tanpa cloud tetap jalan', () async {
     final s = Store();
     expect(s.cloud, isNull);

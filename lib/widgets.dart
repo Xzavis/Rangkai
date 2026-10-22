@@ -1,17 +1,23 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:forui/forui.dart'
     show FButton, FButtonVariant, FCard, FTextField;
 
 import 'core.dart';
+import 'theme/tokens.dart';
 
 EdgeInsets cpiPagePadding(BuildContext context) => EdgeInsets.fromLTRB(
-  MediaQuery.sizeOf(context).width < 600 ? 16 : 24,
+  MediaQuery.sizeOf(context).width < 600
+      ? CpiTokens.pagePadding
+      : 24,
   12,
-  MediaQuery.sizeOf(context).width < 600 ? 16 : 24,
-  100,
+  MediaQuery.sizeOf(context).width < 600
+      ? CpiTokens.pagePadding
+      : 24,
+  96,
 );
 
 class CpiContent extends StatelessWidget {
@@ -29,24 +35,40 @@ class CpiContent extends StatelessWidget {
   );
 }
 
+/// Panel v4: radius 16, border tipis, tanpa shadow (gaya dari FTheme).
+/// [padding] opsional: bila diisi, isi dibungkus satu lapis padding 20
+/// supaya pemanggil tidak menumpuk padding sendiri-sendiri.
 class CpiCard extends StatelessWidget {
   const CpiCard({
     super.key,
     required this.child,
     this.clipBehavior = Clip.none,
+    this.padding,
   });
   final Widget child;
   final Clip clipBehavior;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 4),
     child: FCard(
       clipBehavior: clipBehavior,
-      child: Material(type: MaterialType.transparency, child: child),
+      child: Material(
+        type: MaterialType.transparency,
+        child: padding == null
+            ? child
+            : Padding(padding: padding!, child: child),
+      ),
     ),
   );
 }
 
+/// Nama target di COMPONENTS.md; kelas yang sama dengan [CpiCard].
+typedef RangkaiCard = CpiCard;
+
+/// Aksi v4: radius 12 (dari tema), sentuh >=44, utama 48, label 15px.
+/// [busy] menonaktifkan tombol + menampilkan indikator agar tekan ganda
+/// tidak membuat transaksi/absen ganda. [destructive] untuk aksi hapus.
 class CpiButton extends StatelessWidget {
   const CpiButton({
     super.key,
@@ -54,42 +76,76 @@ class CpiButton extends StatelessWidget {
     required this.child,
     this.secondary = false,
     this.selected = false,
+    this.busy = false,
+    this.destructive = false,
   });
   final VoidCallback? onPressed;
   final Widget child;
-  final bool secondary, selected;
+  final bool secondary, selected, busy, destructive;
   @override
   Widget build(BuildContext context) => ConstrainedBox(
-    constraints: const BoxConstraints(minHeight: 48, minWidth: 44),
-    child: FButton(
-      onPress: onPressed,
-      selected: selected,
-      mainAxisSize: MainAxisSize.min,
-      variant: secondary ? FButtonVariant.secondary : FButtonVariant.primary,
-      child: DefaultTextStyle.merge(
-        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700),
-        child: child,
+      constraints: const BoxConstraints(minHeight: 48, minWidth: 44),
+      child: FButton(
+        onPress: busy ? null : onPressed,
+        selected: selected,
+        mainAxisSize: MainAxisSize.min,
+        variant: destructive
+            ? FButtonVariant.destructive
+            : secondary
+                ? FButtonVariant.secondary
+                : FButtonVariant.primary,
+        child: DefaultTextStyle.merge(
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          child: busy
+              ? Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                    const SizedBox(width: 8),
+                    child,
+                  ],
+                )
+              : child,
+        ),
       ),
-    ),
   );
 }
 
+/// Field berlabel permanen v4: helper/error tampil di dekat field,
+/// tinggi minimum 48 dari tema, autofill + batas panjang diteruskan.
 class CpiField extends StatelessWidget {
   const CpiField({
     super.key,
     this.controller,
     this.label,
     this.hint,
+    this.helper,
+    this.error,
     this.onChanged,
     this.keyboardType,
     this.textInputAction,
     this.onSubmitted,
+    this.autofillHints,
+    this.enabled = true,
+    this.maxLength,
+    this.textCapitalization = TextCapitalization.none,
+    this.inputFormatters,
+    this.autocorrect = true,
   });
   final TextEditingController? controller;
-  final String? label, hint;
+  final String? label, hint, helper, error;
   final ValueChanged<String>? onChanged, onSubmitted;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
+  final Iterable<String>? autofillHints;
+  final bool enabled, autocorrect;
+  final int? maxLength;
+  final TextCapitalization textCapitalization;
+  final List<TextInputFormatter>? inputFormatters;
   @override
   Widget build(BuildContext context) => FTextField(
     control: .managed(
@@ -98,9 +154,20 @@ class CpiField extends StatelessWidget {
     ),
     label: label == null ? null : Text(label!),
     hint: hint,
+    description: helper == null ? null : Text(helper!),
+    error: error == null
+        ? null
+        : Semantics(liveRegion: true, child: Text(error!)),
     keyboardType: keyboardType,
     textInputAction: textInputAction,
     onSubmit: onSubmitted,
+    autofillHints: autofillHints,
+    enabled: enabled,
+    maxLength: maxLength,
+    textCapitalization: textCapitalization,
+    inputFormatters: inputFormatters,
+    autocorrect: autocorrect,
+    enableSuggestions: autocorrect,
   );
 }
 
@@ -265,8 +332,16 @@ class LiveDot extends StatelessWidget {
 }
 
 class EmptyState extends StatelessWidget {
-  const EmptyState({super.key, required this.icon, required this.text});
+  const EmptyState({
+    super.key,
+    required this.icon,
+    required this.text,
+    this.actionLabel,
+    this.onAction,
+  });
   final String icon, text;
+  final String? actionLabel;
+  final VoidCallback? onAction;
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 40),
@@ -276,10 +351,70 @@ class EmptyState extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           text,
+          textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyMedium
               ?.copyWith(color: Theme.of(context).colorScheme.outline),
         ),
+        if (actionLabel != null && onAction != null) ...[
+          const SizedBox(height: 16),
+          CpiButton(onPressed: onAction, child: Text(actionLabel!)),
+        ],
       ],
     ),
+  );
+}
+
+enum StatusTone { active, waiting, error, neutral }
+
+/// Status jujur: ikon + teks (bukan warna/dot saja), statis tanpa pulse.
+/// Teks wajib dari state nyata pemanggil, bukan hardcode siap/berhasil.
+class StatusLabel extends StatelessWidget {
+  const StatusLabel(this.text, {super.key, this.tone = StatusTone.neutral});
+  final String text;
+  final StatusTone tone;
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final (icon, color) = switch (tone) {
+      StatusTone.active => (Icons.check_circle_outline, cs.primary),
+      StatusTone.waiting => (Icons.schedule_outlined, cs.onSurfaceVariant),
+      StatusTone.error => (Icons.error_outline, cs.error),
+      StatusTone.neutral => (Icons.info_outline, cs.onSurfaceVariant),
+    };
+    return Semantics(
+      label: 'Status: $text',
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 16, color: color),
+          const SizedBox(width: 6),
+          Flexible(
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w600,
+                  ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Judul bagian konsisten (18/titleLarge) + aksi opsional sejajar.
+class SectionHeader extends StatelessWidget {
+  const SectionHeader(this.title, {super.key, this.action});
+  final String title;
+  final Widget? action;
+  @override
+  Widget build(BuildContext context) => Row(
+    children: [
+      Expanded(
+        child: Text(title, style: Theme.of(context).textTheme.titleLarge),
+      ),
+      if (action != null) action!,
+    ],
   );
 }

@@ -3,6 +3,22 @@
 > File ini adalah sumber kebenaran lintas-agent (Antigravity CLI/IDE, Claude Code, Cursor).
 > Supermemory `containerTag` wajib = `cpi`. Daemon lokal: `sm start` / `sm status` (port 6767).
 
+## Tool E2E vision ADB USB (2026-10-22)
+
+`tools/vision_windows.py` menyediakan CLI serta MCP stdio `vision_windows`;
+panduan ada di `docs/vision_windows.md`. Screenshot PNG asli dan input koordinat
+ADB tanpa accessibility snapshot/UIAutomator/XML/OCR. Default satu HP USB
+(`adb -d`); input mengembalikan gambar hasil untuk diperiksa agent, bukan status
+tes lulus otomatis. Server sudah didaftarkan ke konfigurasi Codex, Muse Code
+(`.config/muse/settings.json`) dan agy (`.gemini/config/mcp_config.json`) lokal.
+Muse memakai framing JSONL eksplisit; Muse/agy meneruskan USERPROFILE dan
+LOCALAPPDATA untuk kunci ADB Windows. Backup konfigurasi disimpan bersebelahan.
+Handshake/tool discovery dari entri Muse/agy juga berhasil memakai SDK MCP;
+HP sudah terlepas saat verifikasi koneksi kedua client tersebut.
+10 tes tool dan smoke MCP/PNG native pada RMX3867 lulus. Saat smoke, aplikasi
+com.example.cpi masih menampilkan konten putih; ini bukan bukti alur E2E Rangkai
+lulus. Supermemory sedang offline saat pencatatan keputusan ini.
+
 ## Handoff UI terbaru untuk Muse (2026-10-21)
 
 Pengguna meminta UI baru hasil Stitch/Impeccable dimasukkan ke repo agar Muse Agent Code dapat mengimplementasikannya. Mulai dari `MUSE_HANDOFF.md` dan `AGENTS.md`, lalu `docs/ui-v4/README.md`. Handoff ini menambah referensi/spesifikasi, bukan implementasi Dart atau build APK baru.

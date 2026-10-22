@@ -7,11 +7,11 @@ FStyle _style({
 }) => FStyle.inherit(colors: colors, typography: typography, touch: touch)
     .copyWith(
       borderRadius: const FBorderRadius(
-        xs2: BorderRadius.all(Radius.circular(2)),
-        xs: BorderRadius.all(Radius.circular(4)),
-        sm: BorderRadius.all(Radius.circular(6)),
-        md: BorderRadius.all(Radius.circular(6)),
-        lg: BorderRadius.all(Radius.circular(12)),
+        xs2: BorderRadius.all(Radius.circular(4)),
+        xs: BorderRadius.all(Radius.circular(8)),
+        sm: BorderRadius.all(Radius.circular(12)),
+        md: BorderRadius.all(Radius.circular(12)),
+        lg: BorderRadius.all(Radius.circular(16)),
       ),
       shadow: const [],
     );

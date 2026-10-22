@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   forui: ^0.27.6
+  material_ui: ^1.8.0 # Diimport langsung lib/theme/theme.dart (FLucideIcons); jangan hanya transitif.
   geolocator: ^13.0.2 # GPS realtime wajib: izin, status layanan, stream posisi, jarak ke tujuan.
   image_picker: ^1.2.4
   supabase_flutter: ^2.18.3
@@ -19,6 +20,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   forui_cli: ^0.27.0
 

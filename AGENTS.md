@@ -1,6 +1,6 @@
 # Petunjuk agen untuk Rangkai
 
-Baca [MUSE_HANDOFF.md](MUSE_HANDOFF.md), [DESIGN.md](DESIGN.md), dan [CONTEXT.md](CONTEXT.md) sebelum mengubah UI. Paket UI terbaru adalah **UI v4**, disiapkan 21 Oktober 2026; spesifikasi dan referensi ada di [docs/ui-v4/README.md](docs/ui-v4/README.md).
+Baca [MUSE_HANDOFF.md](MUSE_HANDOFF.md), [DESIGN.md](DESIGN.md), dan [CONTEXT.md](CONTEXT.md) sebelum mengubah UI. Paket UI terbaru adalah **UI v4**, disiapkan 21 Oktober 2026; spesifikasi dan referensi ada di [docs/ui-v4/README.md](docs/ui-v4/README.md). File ini adalah aturan kanonik agen; playbook operasional (verifikasi, E2E device, alur GitHub) ada di [AGENT.md](AGENT.md) dan panduan kontributor manusia ada di [README.md](README.md).
 
 ## Urutan acuan
 
